@@ -1,0 +1,13 @@
+services:
+  db:
+    image: vitorium14/sqlpinacoteca:v1
+    container_name: contenedorDB
+    ports:
+      - "3306:3306"
+  php:
+    image: vitorium14/phppinacoteca:v1
+    container_name: contenedorMiApp
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
